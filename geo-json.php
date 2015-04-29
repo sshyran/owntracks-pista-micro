@@ -20,9 +20,9 @@
 
 	$nrecs = 200;
 
-      if (array_key_exists($topic, $conf{'nrecs'})) {
-              $nrecs = $conf{'nrecs'}{$topic};
-      }
+	if (array_key_exists($topic, $conf{'nrecs'})) {
+		$nrecs = $conf{'nrecs'}{$topic};
+	}
 
         $geojson = array(
                 'type'          => 'Feature',
@@ -39,7 +39,10 @@
 			die('Unable to connect to database [' . $db->connect_error . ']');
 		}
 
-		$res = $db->query("SELECT lat, lon FROM location WHERE topic = '" . $topic . "' ORDER BY tst DESC LIMIT " . $nrecs);
+		$t = mysqli_real_escape_string($db, $topic);
+		$n = mysqli_real_escape_string($db, $nrecs);
+
+		$res = $db->query("SELECT lat, lon FROM location WHERE topic = '" . $t . "' ORDER BY tst DESC LIMIT " . $n);
 		if (!$res) {
 			 die('There was an error running the query [' . $db->error . ']');
 		}
