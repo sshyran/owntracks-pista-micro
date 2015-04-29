@@ -2,7 +2,7 @@
 
 ![logo](pista-micro.png)
 
-_Pista Micro_ is a lightweight Pista, designed for a handful of devices. This relies on the database maintained by `o2s` but is much easier to setup than the full-blown _Pista_ is. In other words, you run `o2s` and use _Pista Mini_ with its data.
+_Pista Micro_ is a lightweight Pista, designed for a handful of devices. This relies on the database maintained by `o2s` but is much easier to setup than the full-blown _Pista_ is. In other words, you run `o2s` and use _Pista Micro_ with its data.
 
 ## Configuration
 
