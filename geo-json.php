@@ -18,6 +18,12 @@
 
 	$topics = $conf{'topics'};
 
+	$nrecs = 200;
+
+      if (array_key_exists($topic, $conf{'nrecs'})) {
+              $nrecs = $conf{'nrecs'}{$topic};
+      }
+
         $geojson = array(
                 'type'          => 'Feature',
                 'geometry'      =>  array(
@@ -33,7 +39,7 @@
 			die('Unable to connect to database [' . $db->connect_error . ']');
 		}
 
-		$res = $db->query("SELECT lat, lon FROM location WHERE topic = '" . $topic . "'AND tst > '2015-04-26'");
+		$res = $db->query("SELECT lat, lon FROM location WHERE topic = '" . $topic . "' ORDER BY tst DESC LIMIT " . $nrecs);
 		if (!$res) {
 			 die('There was an error running the query [' . $db->error . ']');
 		}

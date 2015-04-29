@@ -14,7 +14,7 @@ Under the assumption that you've already been running `o2s` and actually have so
 
 ## Using
 
-1. A click on one of the markers (TID) on the map will load the GeoJSON track from the back-end database. There is currently no way to limit the number of points loaded.
+1. A click on one of the markers (TID) on the map will load the GeoJSON track from the back-end database. By default the last 200 points are loaded, but this can be configured on a by-topic base.
 2. Clicking on the _Clear tracks_ button removes all the tracks.
 3. Hovering over a TID should display the device's currently location (if _o2s_ is storing that).
 
