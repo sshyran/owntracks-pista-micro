@@ -1,0 +1,21 @@
+<?php
+
+return array(
+	'dbhost'	=> '127.0.0.1',
+	'dbname'	=> 'owntracks',
+	'dbuser'	=> 'user',
+	'dbpass'	=> 'password',
+
+	# Array of topics (from `lastloc' table) which should be used to
+	# create map's markers
+
+	'topics'	=> array(
+		'owntracks/jjolie/iphone',
+		'owntracks/smith/nexus',
+		),
+	
+	# absolute path to font file
+	'fontfile'	=> '/var/www/pista-micro/OpenSans-Bold.ttf',
+   );
+
+?>
